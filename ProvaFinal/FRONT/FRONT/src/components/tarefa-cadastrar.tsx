@@ -3,20 +3,17 @@ import axios from "axios";
 import { Categoria } from "../Models/Categoria";
 import { Tarefa } from "../Models/Tarefa";
 
-
 function TarefaCadastrar() {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [categoriaId, setCategoriaId] = useState("");
 
-
-
   useEffect(() => {
     axios
       .get<Categoria[]>("http://localhost:5000/categoria/listar")
       .then((response) => setCategorias(response.data))
-      .catch((error) => console.error("Erro ao carregar Tarefas", error));
+      .catch((error) => console.error("Erro ao carregar tarefas", error));
   }, []);
 
   function cadastrar(e: React.FormEvent<HTMLFormElement>) {
@@ -30,14 +27,14 @@ function TarefaCadastrar() {
     axios
       .post<Tarefa>("http://localhost:5000/tarefas/cadastrar", tarefa)
       .then((response) => {
-        console.log("Tarefa cadastrada com sucesso", response.data);
+        console.log("A tarefa foi cadastrada", response.data);
         setTitulo("");
         setDescricao("");
         setCategoriaId("");
 
       })
       .catch((error) => {
-        console.error("Erro ao cadastrar tarefa", error);
+        console.error("Erro ao cadastrar a tarefa", error);
       });
   }
 
@@ -78,5 +75,4 @@ function TarefaCadastrar() {
     </div>
   );
 }
-
 export default TarefaCadastrar;

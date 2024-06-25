@@ -3,7 +3,6 @@ import axios from "axios";
 import { BrowserRouter, Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Tarefa } from "../Models/Tarefa";
 
-
 function TarefaAlterar() {
     const [id, setId] = useState("");
 
@@ -20,11 +19,9 @@ function TarefaAlterar() {
           console.table(response.data);
         })
         .catch((error) => {
-          console.log("Erro ao carregar Tarefas", error);
+          console.log("Erro ao carregar tarefas", error);
         });
     }
-  
-  
 
     function alterarTarefa(){
         axios
@@ -41,7 +38,7 @@ function TarefaAlterar() {
           <h1>Alterar Tarefa</h1>
           
           <form onSubmit={alterarTarefa}>
-            <label>Digite o id da tarefa que gostaria de alterar</label>
+            <label>Digite o id da tarefa para alteraração</label>
             <input
               type="text"
               value={id}
@@ -53,7 +50,6 @@ function TarefaAlterar() {
 
           <div>
       <h2>Lista de tarefas não concluídas</h2>
-      <h3></h3>
       <table>
         <thead>
           <tr>
@@ -78,12 +74,6 @@ function TarefaAlterar() {
       </table>
     </div>
         </div>
-
-        
-      );
-  }
-
-  
-
-
+  );
+}
 export default TarefaAlterar;

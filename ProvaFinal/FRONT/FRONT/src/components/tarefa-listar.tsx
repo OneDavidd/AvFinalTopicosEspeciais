@@ -17,21 +17,20 @@ function TarefaListar() {
         console.table(response.data);
       })
       .catch((error) => {
-        console.log("Erro ao carregar Tarefas de pagamento", error);
+        console.log("Erro ao carregar tarefas", error);
       });
   }
 
   return (
     <div>
-      <h1>Listar Tarefas</h1>
-      <h3>Caso queira concluir uma tarefa, entre no link de alterar tarefa</h3>
+      <h1>Listar tarefas</h1>
       <table>
         <thead>
           <tr>
             <th>ID</th>
             <th>Título</th>
             <th>Descrição</th>
-            <th>Criado em:</th>
+            <th>Criado em</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -50,5 +49,4 @@ function TarefaListar() {
     </div>
   );
 }
-
 export default TarefaListar;

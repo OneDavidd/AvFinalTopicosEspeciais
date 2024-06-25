@@ -24,15 +24,11 @@ function App() {
               <Link to="/pages/tarefas/listarconcluidas">Listar tarefas concluídas</Link>
             </li>
             <li>
-              <Link to ="/pages/tarefas/cadastrar">Cadastrar uma tarefa</Link>
+              <Link to ="/pages/tarefas/cadastrar">Cadastrar tarefas</Link>
             </li>
             <li>
-              <Link to ="/pages/tarefas/alterar">Alterar uma tarefa</Link>
+              <Link to ="/pages/tarefas/alterar">Alterar tarefas</Link>
             </li>
-            
-
-
-
           </ul>
         </nav>
         <Routes>
@@ -42,12 +38,7 @@ function App() {
         <Route path="/pages/tarefas/cadastrar" element={<TarefaCadastrar/>} />
         <Route path="/pages/tarefas/alterar" element={<TarefaAlterar/>} />
         
-
-        
         </Routes>
-        <footer>
-          <p>Gestão de Tarefas</p>
-        </footer>
       </BrowserRouter>
     </div>
   );

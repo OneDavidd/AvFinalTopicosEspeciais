@@ -6,8 +6,8 @@ POST http://localhost:5000/tarefas/cadastrar
 Content-Type: application/json
 
 {
-    "titulo": "Me aproximar da minha tartaruga",
-    "descricao": "Me aproximar da minha tartaruga",
+    "titulo": "Se preparar para prova final de tópics especiais de sistemas",
+    "descricao": "Prestar atenção na aula do coordenador Diogo",
     "categoriaId": "b9cf9b2b-bd80-4dfc-ac74-fd8a222c68ed"
 }
 

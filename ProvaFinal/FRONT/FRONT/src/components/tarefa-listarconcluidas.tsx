@@ -17,19 +17,19 @@ function TarefaListarConcluidas() {
         console.table(response.data);
       })
       .catch((error) => {
-        console.log("Erro ao carregar Tarefas de pagamento", error);
+        console.log("Erro ao carregar tarefas", error);
       });
   }
 
   return (
     <div>
-      <h1>Listar Tarefas concluídas</h1>
+      <h1>Listar tarefas concluídas</h1>
       <table>
         <thead>
           <tr>
             <th>Título</th>
             <th>Descrição</th>
-            <th>Criado em:</th>
+            <th>Criado em</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -47,5 +47,4 @@ function TarefaListarConcluidas() {
     </div>
   );
 }
-
 export default TarefaListarConcluidas;

@@ -7,7 +7,7 @@ builder.Services.AddDbContext<AppDataContext>();
 builder.Services.AddCors(
     options =>
     {
-        options.AddPolicy("AcessoTotal",
+        options.AddPolicy("Liberdadenocódigo",
             builder => builder.
                 AllowAnyOrigin().
                 AllowAnyHeader().
@@ -79,7 +79,7 @@ app.MapPut("/tarefas/alterar/{id}", ([FromServices] AppDataContext ctx, [FromRou
     }
     else if (tarefa.Status == "Em andamento")
     {
-        tarefa.Status = "Tarefa Concluída!";
+        tarefa.Status = "Tarefa concluída!";
     }
 
     ctx.Tarefas.Update(tarefa);
@@ -97,7 +97,7 @@ app.MapGet("/tarefas/naoconcluidas", ([FromServices] AppDataContext ctx) =>
 //GET: http://localhost:5000/tarefas/concluidas
 app.MapGet("/tarefas/concluidas", ([FromServices] AppDataContext ctx) =>
 {
-    return Results.Ok(ctx.Tarefas.ToList().Where(s => s.Status == "Tarefa Concluída!"));
+    return Results.Ok(ctx.Tarefas.ToList().Where(s => s.Status == "Tarefa concluída!"));
 });
 
 app.UseCors("Liberdadenocódigo");

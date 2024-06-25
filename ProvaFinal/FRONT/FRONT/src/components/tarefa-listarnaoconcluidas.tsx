@@ -8,38 +8,17 @@ function TarefaListarNaoConcluidas() {
 
   useEffect(() => {
     carregarTarefas();
-    alterarTarefa("aa46781b-3af5-4cd6-94fd-f4c2b3239d4c");
-  }, []);
-
-  function carregarTarefas() {
-    axios.get("http://localhost:5000/tarefas/naoconcluidas")
-      .then((response) => {
-        setTarefas(response.data);
-      })
-      .catch((error) => {
-        console.log("Erro ao carregar tarefas", error);
-      });
-  }
-
-  function alterarTarefa(id: string) {
-    axios.put(`http://localhost:5000/tarefas/alterar/${id}`, tarefas)
-      .then(() => {
-        <h1>Tarefa alterada com sucesso</h1>
-      })
-      .catch((error) => {
-        console.log("Erro ao alterar Tarefa", error);
-      });
-  }
+ []);
 
   return (
     <div>
-      <h1>Listar Tarefas não concluídas</h1>
+      <h1>Listar tarefas que não foram concluídas</h1>
       <table>
         <thead>
           <tr>
             <th>Título</th>
             <th>Descrição</th>
-            <th>Criado em:</th>
+            <th>Criado em</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -57,5 +36,4 @@ function TarefaListarNaoConcluidas() {
     </div>
   );
 }
-
 export default TarefaListarNaoConcluidas;

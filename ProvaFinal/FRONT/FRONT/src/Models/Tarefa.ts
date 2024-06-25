@@ -10,4 +10,3 @@ export interface Tarefa{
     categoriaId?: string;
     status?: string;
 }
-
